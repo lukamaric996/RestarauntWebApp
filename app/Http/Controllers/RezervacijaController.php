@@ -113,6 +113,11 @@ class RezervacijaController extends Controller
 
     }
 
+    public function izmjena()
+    {
+      return view('stranice.izmjena');
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -128,4 +133,7 @@ class RezervacijaController extends Controller
         return back();
 
     }
+
+
+
 }

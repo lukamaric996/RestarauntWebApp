@@ -34,8 +34,5 @@ class PagesController extends Controller
 
     }
 
-    public function izmjena()
-    {
-      return view('stranice.izmjena');
-    }
+
 }

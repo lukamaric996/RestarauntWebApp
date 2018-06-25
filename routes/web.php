@@ -21,13 +21,15 @@ Route::get('admin', ['middleware' => ['auth', 'admin'], function() {
 Route::get('/', 'PagesController@index');
 
 Route::get('/meni', 'PagesController@meni');
-Route::get('/rezervacija','RezervacijaController@index');
-Route::post('/rezervacija/spremiRez','RezervacijaController@store');
 Route::get('/vizija','PagesController@vizija');
 Route::get('/recenzije','PagesController@rec');
+
+Route::get('/rezervacija','RezervacijaController@index');
+Route::post('/rezervacija/spremiRez','RezervacijaController@store');
+
 Route::get('/create_rec','RecenzijeController@index');
-Route::post('/create_rec/spremiRec','@store');
-Route::get('/izmjena','PagesController@izmjena');
+Route::post('/create_rec/spremiRec','RecenzijeController@store');
+Route::get('/izmjena','RezervacijaController@izmjena');
 Route::put('/izmjena/{id}','UserController@updateUser');
 
 Route::get('/admin', 'AdminLteController@admin');
@@ -51,10 +53,6 @@ Route::get('/admin/pregl_rez/prihvati/{id}','RezervacijaController@update');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-
-
 
 Route::get('admin', ['uses' => 'AdminLteController@admin', 'middleware' => ['auth', 'admin']]);
 Route::get('admin/recenzije', ['uses' => 'AdminLteController@recenzije', 'middleware' => ['auth', 'admin']]);
