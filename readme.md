@@ -1,4 +1,4 @@
-Web App for Restaraunts
+# Web App for Restaraunts
 
 
 ##Windows users:
